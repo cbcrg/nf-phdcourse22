@@ -1,6 +1,6 @@
-# Nextflow training for CRG PhD course 2021
+# Nextflow training for CRG PhD course 2022
 
-Project repository for the Nextflow introductory training taking place online on the 18th of October 2021 in the framework of the CRG PhD introductory course 2021.
+Project repository for the Nextflow introductory training taking place online on the 25th of October 2022 in the framework of the CRG PhD introductory course 2022.
 
 ## Table of Contents
 
@@ -82,13 +82,14 @@ A workflow engine for data analysis pipelines with a strong focus on enabling:
 Load Java 11
 
 ```
+module use /software/as/el7.2/EasyBuild/CRG/modules/all
 module load Java/11.0.2
 ```
 
 Clone this repository with the following command:
 
 ```
-git clone https://github.com/cbcrg/nf-phdcourse21.git && cd nf-phdcourse21
+git clone https://github.com/cbcrg/nf-phdcourse22.git && cd nf-phdcourse22
 ```
 
 Then, install Nextflow by using the following command:
@@ -102,14 +103,13 @@ The above snippet creates the `nextflow` launcher in the current directory.
 Then, please load version 3.8.3 of Singularity on your environment using the command below:
 
 ```
-module use /software/as/el7.2/EasyBuild/CRG/modules/all
 module load Singularity/3.8.3
 ```
 
 Finally, copy the Singularity image using the command below:
 
 ```
-mkdir singularity && cp /nfs/class/cn/phd_course_21/quay.io-nextflow-rnaseq-nf-latest.img ./singularity/
+mkdir singularity && cp /users/cn/jespinosa/phd_course_22/singularity/quay.io-nextflow-rnaseq-nf-latest.img ./singularity/
 ```
 
 <!-- Finally pull the following Docker container:
