@@ -5,9 +5,9 @@ nextflow.enable.dsl=2
  */
 include { index; quantification; fastqc; multiqc  } from './rnaseq-modules.nf'
 
-// params.reads = "$baseDir/data/ggal/gut_{1,2}.fq"
-// params.transcript = "$baseDir/data/ggal/transcriptome.fa"
-// params.multiqc = "$baseDir/multiqc"
+// params.reads = "$projectDir/data/ggal/gut_{1,2}.fq"
+// params.transcript = "$projectDir/data/ggal/transcriptome.fa"
+// params.multiqc = "$projectDir/multiqc"
 // params.outdir = "results"
 
 log.info """\

@@ -9,19 +9,19 @@ nextflow.enable.dsl=2
 /* 
  * pipeline input parameters 
  */
-params.reads = "$baseDir/data/ggal/gut_{1,2}.fq"
-params.transcript = "$baseDir/data/ggal/transcriptome.fa"
-params.multiqc = "$baseDir/multiqc"
+params.reads = "$projectDir/data/ggal/gut_{1,2}.fq"
+params.transcript = "$projectDir/data/ggal/transcriptome.fa"
+params.multiqc = "$projectDir/multiqc"
 params.outdir = "results"
 
 log.info """\
-         R N A S E Q - N F   P I P E L I N E    
-         ===================================
-         transcriptome: ${params.transcript}
-         reads        : ${params.reads}
-         outdir       : ${params.outdir}
-         """
-         .stripIndent()
+        R N A S E Q - N F   P I P E L I N E    
+        ===================================
+        transcriptome: ${params.transcript}
+        reads        : ${params.reads}
+        outdir       : ${params.outdir}
+        """
+        .stripIndent()
 
 include { rnaseq_flow } from './rnaseq-flow.nf'
 
