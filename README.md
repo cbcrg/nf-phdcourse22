@@ -70,7 +70,7 @@ A workflow engine for data analysis pipelines with a strong focus on enabling:
 ### Technical requirements
 
 * Unix-like OS (Linux, macOS, etc.)
-* [Java](http://jdk.java.net/) 8 or later
+* [Java](https://jdk.java.net/) 11 (or later, up to 18)
 * [Singularity](https://github.com/sylabs/singularity) 2.5.x (or later)
 * [Docker](https://www.docker.com/) engine 1.10.x (or later, optional)
 * [Conda](https://conda.io/) 4.5 (or later, optional)
