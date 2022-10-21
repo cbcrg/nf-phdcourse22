@@ -79,6 +79,12 @@ A workflow engine for data analysis pipelines with a strong focus on enabling:
 
 ## Installation
 
+Load Java 11
+
+```
+module load Java/11.0.2
+```
+
 Clone this repository with the following command:
 
 ```
