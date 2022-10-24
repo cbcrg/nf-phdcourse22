@@ -351,8 +351,7 @@ Channel `read_pairs_ch` has been used twice as an input by process `fastqc` and 
 
 #### Exercise 5.1
 
-Use the [tag](https://www.nextflow.io/docs/latest/process.html?highlight=tag#tag) directive to declare a costum
-label that will be shown in the different logs.
+Use the [tag](https://www.nextflow.io/docs/latest/process.html?highlight=tag#tag) directive to declare a custom label that will be shown in the different logs.
 #### Recap
 
 In this step you have learned:
