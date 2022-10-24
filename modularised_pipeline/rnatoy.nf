@@ -7,9 +7,10 @@ nextflow.enable.dsl=2
 /* 
  * pipeline input parameters 
  */
-params.reads      = "$projectDir/data/ggal/gut_{1,2}.fq"
-params.transcript = "$projectDir/data/ggal/transcriptome.fa"
-params.outdir     = "./results"
+// Parameters can also be declared in the configuration
+// params.reads      = "$projectDir/data/ggal/gut_{1,2}.fq"
+// params.transcript = "$projectDir/data/ggal/transcriptome.fa"
+// params.outdir     = "./results"
 
 log.info """\
         R N A S E Q - N F   P I P E L I N E    
@@ -34,7 +35,7 @@ include { SALMON_INDEX_QUANTIFICATION } from './workflows/salmon_index_quantific
 
 read_pairs_ch = Channel.fromFilePairs( params.reads, checkIfExists:true )
 
-workflow RNATOY {
+workflow {
     SALMON_INDEX_QUANTIFICATION( params.transcript, read_pairs_ch )
     
     FASTQC( read_pairs_ch )
@@ -48,6 +49,7 @@ workflow RNATOY {
     )
 }
 
-workflow {
-    RNATOY ()
-}
+// This part will be ignore when included as a sub-workflow
+// workflow {
+//     RNATOY ()
+// }

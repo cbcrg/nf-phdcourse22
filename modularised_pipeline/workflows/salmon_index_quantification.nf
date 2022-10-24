@@ -17,7 +17,8 @@ workflow SALMON_INDEX_QUANTIFICATION {
     // workflow implementation
     main:
     SALMON_INDEX(transcriptome)
-    SALMON_QUANTIFICATION(SALMON_INDEX.out.index, read_files)
+    SALMON_QUANTIFICATION(
+        SALMON_INDEX.out, read_files)
     
     emit:
     salmon_results = SALMON_QUANTIFICATION.out.results

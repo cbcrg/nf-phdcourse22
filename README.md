@@ -468,37 +468,45 @@ In this step you have learned:
 
 Nextflow allows the definition of modules of tasks and sub-workflows. The resulting modules and sub-workflows can be then imported into another Nextflow script using the `include` declaration.
 
-The script `rnaseq-modules.nf` defines the same processes we used in the previous examples.
+The folder `modularised_pipeline` defines the same workflow we used in the previous examples but
+structuring modules and sub-workflows in different files.
 
-These tasks are included in the script `rnaseq-flow.nf` which declares the workflow logic
+Modules are declared in the `modules` directory in several files and define the same processes we used in the previous examples. Note, that one file can include more than one process (module) declaration, as in this [example](https://github.com/cbcrg/nf-phdcourse22/blob/2540e3155105792c6386394712174ad13ddb4415/modularised_pipeline/modules/salmon_modules.nf#L1-L37).
+
+The two `Salmon` processes are then orchestrated in a sub-workflow named `salmon_index_quantification.nf` that can be found in the workflows directory.
+
+Both modules and sub-workflows are included in the script `rnatoy.nf` which declares the workflow logic
 to be executed.
 
-Finally, the sub-workflow is included in the script `script8.nf` that's used as entry point
-for the sake of this tutorial.
+Also, note that parameters have been now defined in the configuration file
 
-Run this example with the command:
+You can run this example with the following commands:
 
 ```
-  nextflow run script8.nf
+cd modularised_pipeline
+./nextflow run rnatoy.nf
 ```
 
 #### Exercise 9.1
 
-Modify the `index` process in `rnaseq-modules.nf` to emit a named output. Then modify the workflow declaration in `rnaseq-flow.nf` accordingly to reference the output channel. See Nextflow [documentation](https://www.nextflow.io/docs/latest/dsl2.html#process-named-output) for details.
+Modify the `index` process in `modules/salmon_modules.nf` to emit a named output. Then modify the workflow declaration in the `workflows/salmon_index_quantification.nf` accordingly to reference the output channel. See Nextflow [documentation](https://www.nextflow.io/docs/latest/dsl2.html#process-named-output) for details.
 
 #### Exercise 9.2
 
-Think how `rnaseq-flow.nf` could be modified to be included as a sub-workflow in another script (previous example) but also to be run as a stand alone script.
+Think how `rnatoy.nf` could be modified to be included as a sub-workflow in another script.
 
-Tip: only implicit defined workflows can be both included as a sub-workflow or run as an application script, see [here](https://www.nextflow.io/docs/latest/dsl2.html#workflow-entrypoint).
+Note: Implicit defined workflows consist of a workflow definition that does not declare any name. 
+When a workflow is meant to be both included as a sub-workflow or run as an application script it should
+include both a named workflow and a implicit declaration, see [here](https://www.nextflow.io/docs/latest/dsl2.html#workflow-entrypoint).
 
 #### Recap
 
 In this step you have learned:
 
-1. How to import modules and sub-workflows in a script.
-2. How to declare named process outputs.
-3. How to write a workflow script that can be used either as library module or as an application script.
+1. How to structure a Nextflow pipeline in a modularised manner. 
+2. How to import modules and sub-workflows in a script.
+3. How to declare named process outputs.
+4. How to write a workflow script that can be used either as library module or as an application script.
 
 ### Step 10 - Executors
 
