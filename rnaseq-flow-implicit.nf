@@ -11,13 +11,13 @@ include { index; quantification; fastqc; multiqc  } from './rnaseq-modules.nf'
 // params.outdir = "results"
 
 log.info """\
-         Params in subworkflow are inhereted    
-         ===================================
-         transcriptome: ${params.transcript}
-         reads        : ${params.reads}
-         outdir       : ${params.outdir}
-         """
-         .stripIndent()
+        Params in subworkflow are inhereted    
+        ===================================
+        transcriptome: ${params.transcript}
+        reads        : ${params.reads}
+        outdir       : ${params.outdir}
+        """
+        .stripIndent()
 
 // read_pairs_ch = Channel.fromFilePairs( params.reads, checkIfExists:true )
 
