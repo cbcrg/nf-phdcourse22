@@ -466,8 +466,7 @@ In this step you have learned:
 
 ### Step 9 - Modularization with DSL2
 
-Nextflow allows the definition of modules of tasks and sub-workflows. The resulting modules and sub-workflows
-can be then imported into another Nextflow script using the `include` declaration.
+Nextflow allows the definition of modules of tasks and sub-workflows. The resulting modules and sub-workflows can be then imported into another Nextflow script using the `include` declaration.
 
 The script `rnaseq-modules.nf` defines the same processes we used in the previous examples.
 
@@ -485,15 +484,13 @@ Run this example with the command:
 
 #### Exercise 9.1
 
-Modify the `index` process in `rnaseq-modules.nf` to emit a named output.
-Then modify the workflow declaration in `rnaseq-flow.nf` accordingly to reference the output channel.
-See Nextflow [documentation](https://www.nextflow.io/docs/latest/dsl2.html#process-named-output) for details.
+Modify the `index` process in `rnaseq-modules.nf` to emit a named output. Then modify the workflow declaration in `rnaseq-flow.nf` accordingly to reference the output channel. See Nextflow [documentation](https://www.nextflow.io/docs/latest/dsl2.html#process-named-output) for details.
 
 #### Exercise 9.2
 
 Think how `rnaseq-flow.nf` could be modified to be included as a sub-workflow in another script (previous example) but also to be run as a stand alone script.
 
-Tip: only implicit defined workflows can be both included as a sub-workflow or run as an application script, see [here](https://www.nextflow.io/docs/latest/dsl2.html#implicit-workflow).
+Tip: only implicit defined workflows can be both included as a sub-workflow or run as an application script, see [here](https://www.nextflow.io/docs/latest/dsl2.html#workflow-entrypoint).
 
 #### Recap
 
