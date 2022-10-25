@@ -484,7 +484,7 @@ You can run this example with the following commands:
 
 ```
 cd modularised_pipeline
-./nextflow run rnatoy.nf
+../nextflow run rnatoy.nf
 ```
 
 #### Exercise 9.1
