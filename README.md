@@ -79,6 +79,10 @@ A workflow engine for data analysis pipelines with a strong focus on enabling:
 
 ## Installation
 
+For simplicity, we will use the Rstudio environment also used to run other parts of the PhD course. Although, it is not an environment design to run Nextflow, it will allow us to use a graphical interface and to share exactly the same computational environment. We will avoid this way any issues due to different software or dependencies versions. 
+
+To access the environment go to [https://rcourse.linux.crg.es](https://rcourse.linux.crg.es) and login with you CRG user and password.
+
 Load Java 11
 
 ```
